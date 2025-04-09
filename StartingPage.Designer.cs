@@ -1,6 +1,6 @@
 ﻿namespace GroupProject
 {
-    partial class Form1
+    partial class StartingPage
     {
         /// <summary>
         /// Required designer variable.
@@ -97,7 +97,7 @@
             this.LPpanel.TabIndex = 4;
             this.LPpanel.Paint += new System.Windows.Forms.PaintEventHandler(this.LPpanel_Paint);
             // 
-            // Form1
+            // StartingPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -108,9 +108,10 @@
             this.Controls.Add(this.CreateAccount);
             this.Controls.Add(this.AppDescription);
             this.Controls.Add(this.AppTitle);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "StartingPage";
+            this.Text = "VanGuard";
             this.ResumeLayout(false);
             this.PerformLayout();
 

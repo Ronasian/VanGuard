@@ -1,6 +1,6 @@
 ﻿namespace GroupProject
 {
-    partial class Form2
+    partial class CreateAccount
     {
         /// <summary>
         /// Required designer variable.

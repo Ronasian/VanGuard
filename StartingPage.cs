@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace GroupProject
 {
-    public partial class Form1 : Form
+    public partial class StartingPage : Form
     {
-        public Form1()
+        public StartingPage()
         {
             InitializeComponent();
             LPpanel.Invalidate();
