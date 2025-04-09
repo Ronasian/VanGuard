@@ -54,7 +54,7 @@
             this.AppDescription.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AppDescription.ForeColor = System.Drawing.SystemColors.Control;
             this.AppDescription.Location = new System.Drawing.Point(300, 255);
-            this.AppDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AppDescription.Margin = new System.Windows.Forms.Padding(4);
             this.AppDescription.Multiline = true;
             this.AppDescription.Name = "AppDescription";
             this.AppDescription.ReadOnly = true;
@@ -68,7 +68,7 @@
             this.CreateAccount.BackColor = System.Drawing.Color.OrangeRed;
             this.CreateAccount.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CreateAccount.Location = new System.Drawing.Point(300, 370);
-            this.CreateAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CreateAccount.Margin = new System.Windows.Forms.Padding(4);
             this.CreateAccount.Name = "CreateAccount";
             this.CreateAccount.Size = new System.Drawing.Size(176, 38);
             this.CreateAccount.TabIndex = 2;
@@ -79,7 +79,7 @@
             // 
             this.Login.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Login.Location = new System.Drawing.Point(499, 370);
-            this.Login.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Login.Margin = new System.Windows.Forms.Padding(4);
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(176, 38);
             this.Login.TabIndex = 3;
@@ -91,9 +91,9 @@
             this.LPpanel.BackColor = System.Drawing.Color.OrangeRed;
             this.LPpanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.LPpanel.Location = new System.Drawing.Point(0, 0);
-            this.LPpanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LPpanel.Margin = new System.Windows.Forms.Padding(4);
             this.LPpanel.Name = "LPpanel";
-            this.LPpanel.Size = new System.Drawing.Size(1067, 60);
+            this.LPpanel.Size = new System.Drawing.Size(1067, 54);
             this.LPpanel.TabIndex = 4;
             this.LPpanel.Paint += new System.Windows.Forms.PaintEventHandler(this.LPpanel_Paint);
             // 
@@ -109,7 +109,7 @@
             this.Controls.Add(this.AppDescription);
             this.Controls.Add(this.AppTitle);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "StartingPage";
             this.Text = "VanGuard";
             this.ResumeLayout(false);
