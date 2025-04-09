@@ -32,6 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblLogin = new System.Windows.Forms.LinkLabel();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -76,12 +77,23 @@
             this.lblLogin.TabStop = true;
             this.lblLogin.Text = "Log in here";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(435, 277);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(79, 30);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "label3";
+            // 
             // CreateAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1323, 825);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
@@ -100,5 +112,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.LinkLabel lblLogin;
+        private System.Windows.Forms.Label label3;
     }
 }
