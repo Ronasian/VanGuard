@@ -31,5 +31,15 @@ namespace GroupProject
         {
 
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void position_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
