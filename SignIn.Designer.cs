@@ -117,6 +117,7 @@
             this.btnSignIn.TabIndex = 6;
             this.btnSignIn.Text = "sign in";
             this.btnSignIn.UseVisualStyleBackColor = false;
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // panel1
             // 

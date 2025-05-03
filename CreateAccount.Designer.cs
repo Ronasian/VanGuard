@@ -39,7 +39,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.cmbRole = new System.Windows.Forms.ComboBox();
+            this.cmbPosition = new System.Windows.Forms.ComboBox();
             this.btnSubmitCreate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -73,7 +73,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkOrange;
             this.panel1.Location = new System.Drawing.Point(-11, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1016, 44);
             this.panel1.TabIndex = 1;
@@ -107,7 +107,7 @@
             this.txtName.BackColor = System.Drawing.Color.Black;
             this.txtName.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(316, 201);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(220, 29);
             this.txtName.TabIndex = 4;
@@ -117,7 +117,7 @@
             this.txtEmail.BackColor = System.Drawing.Color.Black;
             this.txtEmail.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(316, 258);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(220, 29);
             this.txtEmail.TabIndex = 5;
@@ -153,7 +153,7 @@
             this.txtPassword.BackColor = System.Drawing.Color.Black;
             this.txtPassword.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(317, 317);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(220, 29);
             this.txtPassword.TabIndex = 8;
@@ -173,22 +173,22 @@
             this.label6.Text = "POSITION";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // cmbRole
+            // cmbPosition
             // 
-            this.cmbRole.BackColor = System.Drawing.Color.Black;
-            this.cmbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbRole.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbRole.ForeColor = System.Drawing.Color.Black;
-            this.cmbRole.FormattingEnabled = true;
-            this.cmbRole.Items.AddRange(new object[] {
+            this.cmbPosition.BackColor = System.Drawing.Color.Black;
+            this.cmbPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPosition.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbPosition.ForeColor = System.Drawing.Color.Black;
+            this.cmbPosition.FormattingEnabled = true;
+            this.cmbPosition.Items.AddRange(new object[] {
             "Driver",
             "Manager"});
-            this.cmbRole.Location = new System.Drawing.Point(316, 376);
-            this.cmbRole.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.cmbRole.Name = "cmbRole";
-            this.cmbRole.Size = new System.Drawing.Size(221, 27);
-            this.cmbRole.TabIndex = 10;
-            this.cmbRole.SelectedIndexChanged += new System.EventHandler(this.position_SelectedIndexChanged);
+            this.cmbPosition.Location = new System.Drawing.Point(316, 376);
+            this.cmbPosition.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbPosition.Name = "cmbPosition";
+            this.cmbPosition.Size = new System.Drawing.Size(221, 27);
+            this.cmbPosition.TabIndex = 10;
+            this.cmbPosition.SelectedIndexChanged += new System.EventHandler(this.position_SelectedIndexChanged);
             // 
             // btnSubmitCreate
             // 
@@ -199,6 +199,7 @@
             this.btnSubmitCreate.TabIndex = 11;
             this.btnSubmitCreate.Text = "Create Account";
             this.btnSubmitCreate.UseVisualStyleBackColor = true;
+            this.btnSubmitCreate.Click += new System.EventHandler(this.btnSubmitCreate_Click);
             // 
             // CreateAccount
             // 
@@ -207,7 +208,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(845, 562);
             this.Controls.Add(this.btnSubmitCreate);
-            this.Controls.Add(this.cmbRole);
+            this.Controls.Add(this.cmbPosition);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label5);
@@ -219,7 +220,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CreateAccount";
             this.Text = "VanGuard";
             this.Load += new System.EventHandler(this.CreateAccount_Load);
@@ -241,7 +242,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cmbRole;
+        private System.Windows.Forms.ComboBox cmbPosition;
         private System.Windows.Forms.Button btnSubmitCreate;
     }
 }

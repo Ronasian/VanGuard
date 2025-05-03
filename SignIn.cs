@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace GroupProject
 {
@@ -23,6 +24,11 @@ namespace GroupProject
         }
 
         private void SignIn_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSignIn_Click(object sender, EventArgs e)
         {
 
         }

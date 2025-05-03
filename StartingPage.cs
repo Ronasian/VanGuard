@@ -41,7 +41,8 @@ namespace GroupProject
         private void btnLogin_Click(object sender, EventArgs e)
         {
             SignIn signin = new SignIn();
-            this.NavigationService.Navigate(signin);
+            this.Hide();
+            signin.Show();
         }
 
         private void StartingPage_Load(object sender, EventArgs e)
