@@ -33,13 +33,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblLogin = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
-            this.name = new System.Windows.Forms.TextBox();
-            this.email = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.pw = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.position = new System.Windows.Forms.ComboBox();
+            this.cmbRole = new System.Windows.Forms.ComboBox();
+            this.btnSubmitCreate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -47,9 +48,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Gadugi", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(349, 73);
+            this.label1.Location = new System.Drawing.Point(262, 59);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(572, 73);
+            this.label1.Size = new System.Drawing.Size(456, 56);
             this.label1.TabIndex = 0;
             this.label1.Text = "Create New Account";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -59,27 +61,31 @@
             // 
             this.label2.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(482, 156);
+            this.label2.Location = new System.Drawing.Point(306, 127);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(187, 30);
+            this.label2.Size = new System.Drawing.Size(186, 24);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Already Registered?";
+            this.label2.Text = "Already have an account?";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkOrange;
-            this.panel1.Location = new System.Drawing.Point(-15, 0);
+            this.panel1.Location = new System.Drawing.Point(-11, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1354, 54);
+            this.panel1.Size = new System.Drawing.Size(1016, 44);
             this.panel1.TabIndex = 1;
             // 
             // lblLogin
             // 
             this.lblLogin.AutoSize = true;
             this.lblLogin.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin.Location = new System.Drawing.Point(661, 156);
+            this.lblLogin.Location = new System.Drawing.Point(496, 127);
+            this.lblLogin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(107, 24);
+            this.lblLogin.Size = new System.Drawing.Size(87, 19);
             this.lblLogin.TabIndex = 2;
             this.lblLogin.TabStop = true;
             this.lblLogin.Text = "Log in here";
@@ -89,38 +95,43 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(418, 219);
+            this.label3.Location = new System.Drawing.Point(314, 178);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 24);
+            this.label3.Size = new System.Drawing.Size(53, 19);
             this.label3.TabIndex = 3;
             this.label3.Text = "NAME";
             // 
-            // name
+            // txtName
             // 
-            this.name.BackColor = System.Drawing.Color.Black;
-            this.name.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name.Location = new System.Drawing.Point(422, 247);
-            this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(292, 34);
-            this.name.TabIndex = 4;
+            this.txtName.BackColor = System.Drawing.Color.Black;
+            this.txtName.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(316, 201);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(220, 29);
+            this.txtName.TabIndex = 4;
             // 
-            // email
+            // txtEmail
             // 
-            this.email.BackColor = System.Drawing.Color.Black;
-            this.email.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.email.Location = new System.Drawing.Point(422, 318);
-            this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(292, 34);
-            this.email.TabIndex = 5;
+            this.txtEmail.BackColor = System.Drawing.Color.Black;
+            this.txtEmail.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(316, 258);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(220, 29);
+            this.txtEmail.TabIndex = 5;
+            this.txtEmail.TextChanged += new System.EventHandler(this.email_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(419, 289);
+            this.label4.Location = new System.Drawing.Point(314, 235);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 24);
+            this.label4.Size = new System.Drawing.Size(53, 19);
             this.label4.TabIndex = 6;
             this.label4.Text = "EMAIL";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -130,69 +141,85 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(418, 363);
+            this.label5.Location = new System.Drawing.Point(314, 295);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(116, 24);
+            this.label5.Size = new System.Drawing.Size(94, 19);
             this.label5.TabIndex = 7;
             this.label5.Text = "PASSWORD";
             // 
-            // pw
+            // txtPassword
             // 
-            this.pw.BackColor = System.Drawing.Color.Black;
-            this.pw.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pw.Location = new System.Drawing.Point(423, 390);
-            this.pw.Name = "pw";
-            this.pw.Size = new System.Drawing.Size(292, 34);
-            this.pw.TabIndex = 8;
-            this.pw.UseSystemPasswordChar = true;
-            this.pw.Visible = false;
+            this.txtPassword.BackColor = System.Drawing.Color.Black;
+            this.txtPassword.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(317, 317);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(220, 29);
+            this.txtPassword.TabIndex = 8;
+            this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.Visible = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(418, 436);
+            this.label6.Location = new System.Drawing.Point(314, 354);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 24);
+            this.label6.Size = new System.Drawing.Size(79, 19);
             this.label6.TabIndex = 9;
             this.label6.Text = "POSITION";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // position
+            // cmbRole
             // 
-            this.position.BackColor = System.Drawing.Color.Black;
-            this.position.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.position.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.position.ForeColor = System.Drawing.Color.Black;
-            this.position.FormattingEnabled = true;
-            this.position.Items.AddRange(new object[] {
+            this.cmbRole.BackColor = System.Drawing.Color.Black;
+            this.cmbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRole.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbRole.ForeColor = System.Drawing.Color.Black;
+            this.cmbRole.FormattingEnabled = true;
+            this.cmbRole.Items.AddRange(new object[] {
             "Driver",
             "Manager"});
-            this.position.Location = new System.Drawing.Point(422, 463);
-            this.position.Name = "position";
-            this.position.Size = new System.Drawing.Size(288, 32);
-            this.position.TabIndex = 10;
-            this.position.SelectedIndexChanged += new System.EventHandler(this.position_SelectedIndexChanged);
+            this.cmbRole.Location = new System.Drawing.Point(316, 376);
+            this.cmbRole.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbRole.Name = "cmbRole";
+            this.cmbRole.Size = new System.Drawing.Size(221, 27);
+            this.cmbRole.TabIndex = 10;
+            this.cmbRole.SelectedIndexChanged += new System.EventHandler(this.position_SelectedIndexChanged);
+            // 
+            // btnSubmitCreate
+            // 
+            this.btnSubmitCreate.Font = new System.Drawing.Font("Gadugi", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmitCreate.Location = new System.Drawing.Point(386, 431);
+            this.btnSubmitCreate.Name = "btnSubmitCreate";
+            this.btnSubmitCreate.Size = new System.Drawing.Size(106, 23);
+            this.btnSubmitCreate.TabIndex = 11;
+            this.btnSubmitCreate.Text = "Create Account";
+            this.btnSubmitCreate.UseVisualStyleBackColor = true;
             // 
             // CreateAccount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1058, 660);
-            this.Controls.Add(this.position);
+            this.ClientSize = new System.Drawing.Size(845, 562);
+            this.Controls.Add(this.btnSubmitCreate);
+            this.Controls.Add(this.cmbRole);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.pw);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.email);
-            this.Controls.Add(this.name);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "CreateAccount";
             this.Text = "VanGuard";
             this.Load += new System.EventHandler(this.CreateAccount_Load);
@@ -208,12 +235,13 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.LinkLabel lblLogin;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox name;
-        private System.Windows.Forms.TextBox email;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox pw;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox position;
+        private System.Windows.Forms.ComboBox cmbRole;
+        private System.Windows.Forms.Button btnSubmitCreate;
     }
 }

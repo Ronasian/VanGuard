@@ -37,5 +37,46 @@ namespace GroupProject
         {
 
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            SignIn signin = new SignIn();
+            this.NavigationService.Navigate(signin);
+        }
+
+        private void StartingPage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelLogin_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnCreateAccount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelCreateAccount_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
