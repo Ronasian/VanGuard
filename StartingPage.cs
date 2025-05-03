@@ -32,10 +32,5 @@ namespace GroupProject
                 e.Graphics.FillRectangle(brush, LPpanel.ClientRectangle);
             }
         }
-
-        private void AppTitle_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
