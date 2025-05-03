@@ -31,5 +31,25 @@ namespace GroupProject
         {
 
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void position_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void email_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

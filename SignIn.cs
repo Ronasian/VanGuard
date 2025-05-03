@@ -21,5 +21,10 @@ namespace GroupProject
         {
 
         }
+
+        private void SignIn_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
