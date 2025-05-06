@@ -19,20 +19,16 @@ namespace GroupProject
         public StartingPage()
         {
             InitializeComponent();
-
-            //Sets up dropdown role options
-            cmbRole.Items.Add("Driver");
-            cmbRole.Items.Add("Manager");
-
-            //Default view
-            panelLogin.Visible = true;
-            panelCreateAccount.Visible = false;
-          
+            
+            //gradient paint on top bar
             LPpanel.Invalidate();
+
+            //reduces flicker when drawing
             this.DoubleBuffered = true;
 
         }
 
+        //gradient bar drawing
         private void LPpanel_Paint(object sender, PaintEventArgs e)
         {
             using (LinearGradientBrush brush = new LinearGradientBrush(
@@ -52,9 +48,13 @@ namespace GroupProject
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            SignIn signin = new SignIn();
+            //open the SignIn form
+            SignIn signInForm = new SignIn();
             this.Hide();
-            signin.Show();
+            signInForm.FormClosed += (s, args) => this.Show(); // return to this form after closing
+            signInForm.Show();
+
+
         }
 
         private void StartingPage_Load(object sender, EventArgs e)
@@ -69,8 +69,10 @@ namespace GroupProject
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
-            panelLogin.Visible = false;
-            panelCreateAccount.Visible = true;
+            CreateAccount createAccountForm = new CreateAccount();
+            this.Hide();//hides the current form
+            createAccountForm.FormClosed += (s, args) => this.Show(); //Re-show when user closes the form
+            createAccountForm.Show();
 
         }
         private void panelCreateAccount_Paint(object sender, PaintEventArgs e)
@@ -93,36 +95,6 @@ namespace GroupProject
 
         }
 
-        private void btnSubmitCreate_Click(object sender, EventArgs e)
-        {
-            //reads inputs from the form
-            string name = txtName.Text.Trim();
-            string email = txtEmail.Text.Trim();
-            string password = txtPassword.Text.Trim();
-            string role = cmbRole.SelectedItem?.ToString(); // role selected from dropdown list
-
-            MessageBox.Show($"Name: '{name}'\nEmail: '{email}'\nPassword: '{password}'\nRole: '{role}");
-
-            //checks fields are not empty
-            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(email) ||
-                string.IsNullOrEmpty(password) || string.IsNullOrEmpty(role))
-            {
-                MessageBox.Show("All fields are required.");
-                return;
-            }
-
-            //check if email hjas been used
-            if (UserDatabase.Users.Any(u => u.Email == email))
-            {
-                MessageBox.Show("Email is already in use.");
-                return;
-            }
-
-            //Creates a new user and adds to the database
-            var newUser = new User(name, email, password, role);
-            UserDatabase.AddUser(newUser);
-
-            MessageBox.Show("Account created successfully!");
-        }
+        
     }
 }
