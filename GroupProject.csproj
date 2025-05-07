@@ -57,13 +57,14 @@
     <Compile Include="DriverHomePage.Designer.cs">
       <DependentUpon>DriverHomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="formMangerHome.cs">
+    <Compile Include="ManagerHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formMangerHome.Designer.cs">
-      <DependentUpon>formMangerHome.cs</DependentUpon>
+    <Compile Include="ManagerHomePage.Designer.cs">
+      <DependentUpon>ManagerHomePage.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Van.cs" />
     <Compile Include="SignIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,8 +91,8 @@
     <EmbeddedResource Include="DriverHomePage.resx">
       <DependentUpon>DriverHomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formMangerHome.resx">
-      <DependentUpon>formMangerHome.cs</DependentUpon>
+    <EmbeddedResource Include="ManagerHomePage.resx">
+      <DependentUpon>ManagerHomePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignIn.resx">
       <DependentUpon>SignIn.cs</DependentUpon>
