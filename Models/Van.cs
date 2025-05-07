@@ -10,13 +10,13 @@ namespace GroupProject.Models
     {
         // randomly assigned ID (4 digits)
         public string Id { get; set; }
-        // if unassigned, return null
-        public string AssignedDriverEmail { get; set; }
+        // if unassigned, return null. should display driver email
+        public string AssignedDriver { get; set; }
         // Active or Out of Service
         public string Status { get; set; } 
         // yes or no
         public bool NeedsRepair { get; set; }
         // driver side entries for vehicle
-        public string ConditionReport { get; set; }
+        public string Report { get; set; }
     }
 }

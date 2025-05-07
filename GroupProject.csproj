@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Data\CsvToJsonConverter.cs" />
     <Compile Include="Data\UserDatabase.cs" />
+    <Compile Include="Data\VanDatabase.cs" />
     <Compile Include="DriverHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
