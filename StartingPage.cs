@@ -57,7 +57,9 @@ namespace GroupProject
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
-
+            CreateAccount createAccount = new CreateAccount();
+            this.Hide();
+            createAccount.Show();
         }
 
         private void panelCreateAccount_Paint(object sender, PaintEventArgs e)
