@@ -101,7 +101,7 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Home";
             // 
-            // HomePage
+            // DriverHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -113,8 +113,8 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.panel1);
-            this.Name = "HomePage";
-            this.Text = "HomePage";
+            this.Name = "DriverHomePage";
+            this.Text = "VanGuard";
             this.Load += new System.EventHandler(this.DriverHomePage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
