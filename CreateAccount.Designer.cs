@@ -71,12 +71,15 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.DarkOrange;
             this.panel1.Location = new System.Drawing.Point(-11, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1016, 44);
+            this.panel1.Size = new System.Drawing.Size(860, 44);
             this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lblLogin
             // 
@@ -89,6 +92,7 @@
             this.lblLogin.TabIndex = 2;
             this.lblLogin.TabStop = true;
             this.lblLogin.Text = "Log in here";
+            this.lblLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblLogin_LinkClicked);
             // 
             // label3
             // 
@@ -106,6 +110,7 @@
             // 
             this.txtName.BackColor = System.Drawing.Color.Black;
             this.txtName.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.ForeColor = System.Drawing.Color.White;
             this.txtName.Location = new System.Drawing.Point(316, 201);
             this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
@@ -116,6 +121,7 @@
             // 
             this.txtEmail.BackColor = System.Drawing.Color.Black;
             this.txtEmail.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.ForeColor = System.Drawing.Color.White;
             this.txtEmail.Location = new System.Drawing.Point(316, 258);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
@@ -152,13 +158,14 @@
             // 
             this.txtPassword.BackColor = System.Drawing.Color.Black;
             this.txtPassword.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.ForeColor = System.Drawing.Color.White;
             this.txtPassword.Location = new System.Drawing.Point(317, 317);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(220, 29);
             this.txtPassword.TabIndex = 8;
             this.txtPassword.UseSystemPasswordChar = true;
-            this.txtPassword.Visible = false;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // label6
             // 
@@ -193,7 +200,7 @@
             // btnSubmitCreate
             // 
             this.btnSubmitCreate.Font = new System.Drawing.Font("Gadugi", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmitCreate.Location = new System.Drawing.Point(386, 431);
+            this.btnSubmitCreate.Location = new System.Drawing.Point(373, 431);
             this.btnSubmitCreate.Name = "btnSubmitCreate";
             this.btnSubmitCreate.Size = new System.Drawing.Size(106, 23);
             this.btnSubmitCreate.TabIndex = 11;

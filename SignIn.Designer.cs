@@ -64,6 +64,7 @@
             // txtLoginEmail
             // 
             this.txtLoginEmail.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.txtLoginEmail.ForeColor = System.Drawing.Color.White;
             this.txtLoginEmail.Location = new System.Drawing.Point(313, 198);
             this.txtLoginEmail.Name = "txtLoginEmail";
             this.txtLoginEmail.Size = new System.Drawing.Size(184, 20);
@@ -85,6 +86,7 @@
             // txtLoginPassword
             // 
             this.txtLoginPassword.BackColor = System.Drawing.SystemColors.InfoText;
+            this.txtLoginPassword.ForeColor = System.Drawing.Color.White;
             this.txtLoginPassword.Location = new System.Drawing.Point(313, 237);
             this.txtLoginPassword.Name = "txtLoginPassword";
             this.txtLoginPassword.Size = new System.Drawing.Size(184, 20);

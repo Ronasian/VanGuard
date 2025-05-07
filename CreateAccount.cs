@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Drawing.Drawing2D;
 
 namespace GroupProject
 {
@@ -17,6 +18,12 @@ namespace GroupProject
         public CreateAccount()
         {
             InitializeComponent();
+
+            //gradient paint on top bar
+            panel1.Invalidate();
+
+            //reduces flicker when drawing
+            this.DoubleBuffered = true;
 
             if (!File.Exists(filePath))
             {
@@ -86,6 +93,28 @@ namespace GroupProject
             File.AppendAllText(filePath, newUser + Environment.NewLine);
 
             MessageBox.Show("Account created successfully!");
+        }
+
+        private void lblLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close(); //return to StartingPage due to the FormClosed handler
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            using (LinearGradientBrush brush = new LinearGradientBrush(
+                panel1.ClientRectangle,
+                Color.FromArgb(255, 255, 49, 49),    // Start color
+                Color.FromArgb(255, 255, 187, 77),  // End color
+                LinearGradientMode.Horizontal))     // Direction
+            {
+                e.Graphics.FillRectangle(brush, panel1.ClientRectangle);
+            }
         }
     }
 }
