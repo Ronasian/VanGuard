@@ -50,21 +50,25 @@ namespace GroupProject
             }
 
             // Successful login
-            MessageBox.Show($"Welcome, {user.Name}! Position: {user.Role}");
+            MessageBox.Show($"Welcome, {user.Name}! Role: {user.Role}");
 
-            // Navigate to role-based homepage
             this.Hide();
 
             if (user.Role == "Driver")
             {
-                DriverHomePage driverPage = new DriverHomePage(user); // set up for homepage
+                DriverHomePage driverPage = new DriverHomePage(user); // Your form constructor
                 driverPage.Show();
+            }
+            else if (user.Role == "Manager")
+            {
+                // add this later
+                MessageBox.Show("need to implement manager page");
             }
             else
             {
-                // Add manager home page
-                MessageBox.Show("Need to impliment managers homepage");
+                MessageBox.Show("Invalid Role");
             }
+
         }
     }
 }

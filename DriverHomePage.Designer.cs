@@ -1,6 +1,6 @@
 ﻿namespace GroupProject
 {
-    partial class HomePage
+    partial class DriverHomePage
     {
         /// <summary>
         /// Required designer variable.
@@ -115,6 +115,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "HomePage";
             this.Text = "HomePage";
+            this.Load += new System.EventHandler(this.DriverHomePage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

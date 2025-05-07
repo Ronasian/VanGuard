@@ -7,14 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GroupProject.Models;
 
 namespace GroupProject
 {
-    public partial class HomePage : Form
+    public partial class DriverHomePage : Form
     {
-        public HomePage()
+        private User loggedInUser;
+
+        // constructor takes a User object
+        public DriverHomePage(User user)
         {
             InitializeComponent();
+            loggedInUser = user;
+
+        }
+
+        private void DriverHomePage_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
