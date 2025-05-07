@@ -64,6 +64,7 @@
       <DependentUpon>ManagerHomePage.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Van.cs" />
     <Compile Include="SignIn.cs">
       <SubType>Form</SubType>
     </Compile>
