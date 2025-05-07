@@ -56,13 +56,15 @@ namespace GroupProject
 
             if (user.Role == "Driver")
             {
-                DriverHomePage driverPage = new DriverHomePage(user); // Your form constructor
+                DriverHomePage driverPage = new DriverHomePage(user);
+                this.Hide();
                 driverPage.Show();
             }
             else if (user.Role == "Manager")
             {
-                // add this later
-                MessageBox.Show("need to implement manager page");
+                ManagerHomePage managerPage = new ManagerHomePage(user);
+                this.Hide();
+                managerPage.Show();
             }
             else
             {

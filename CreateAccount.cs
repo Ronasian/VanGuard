@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Drawing.Drawing2D;
+using GroupProject.Data;
+using GroupProject.Models;
 
 namespace GroupProject
 {
@@ -68,31 +70,35 @@ namespace GroupProject
 
         private void btnSubmitCreate_Click(object sender, EventArgs e)
         {
-            string name = txtName.Text;
-            string email = txtEmail.Text;
+            string name = txtName.Text.Trim();
+            string email = txtEmail.Text.Trim();
             string password = txtPassword.Text;
-            string position = cmbPosition.SelectedItem?.ToString();
+            string role = cmbPosition.SelectedItem?.ToString(); // "Driver" or "Manager"
 
             if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(email) ||
-                string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(position))
+                string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(role))
             {
                 MessageBox.Show("Please fill in all fields.");
                 return;
             }
 
-            bool emailExists = File.ReadAllLines(filePath).Skip(1)
-                .Any(line => line.Split(',')[1].Equals(email, StringComparison.OrdinalIgnoreCase));
-
-            if (emailExists)
+            // Check if user already exists
+            if (UserDatabase.Authenticate(email, password) != null)
             {
                 MessageBox.Show("An account with this email already exists.");
                 return;
             }
 
-            string newUser = $"{name},{email},{password},{position}";
-            File.AppendAllText(filePath, newUser + Environment.NewLine);
+            // Create and add new user
+            User newUser = new User(name, email, password, role);
+            UserDatabase.AddUser(newUser);
 
             MessageBox.Show("Account created successfully!");
+
+            // Optional: redirect to SignIn form
+            this.Hide();
+            SignIn signInForm = new SignIn();
+            signInForm.Show();
         }
 
         private void lblLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
