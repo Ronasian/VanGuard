@@ -73,7 +73,7 @@ namespace GroupProject
             string name = txtName.Text.Trim();
             string email = txtEmail.Text.Trim();
             string password = txtPassword.Text;
-            string role = cmbPosition.SelectedItem?.ToString(); // "Driver" or "Manager"
+            string role = cmbPosition.SelectedItem?.ToString();
 
             if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(email) ||
                 string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(role))
@@ -82,23 +82,18 @@ namespace GroupProject
                 return;
             }
 
-            // Check if user already exists
-            if (UserDatabase.Authenticate(email, password) != null)
+            if (UserDatabase.EmailExists(email))
             {
                 MessageBox.Show("An account with this email already exists.");
                 return;
             }
 
-            // Create and add new user
-            User newUser = new User(name, email, password, role);
+            var newUser = new User(name, email, password, role);
             UserDatabase.AddUser(newUser);
-
             MessageBox.Show("Account created successfully!");
 
-            // Optional: redirect to SignIn form
             this.Hide();
-            SignIn signInForm = new SignIn();
-            signInForm.Show();
+            new SignIn().Show();
         }
 
         private void lblLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

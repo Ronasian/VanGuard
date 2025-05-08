@@ -2,54 +2,51 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Newtonsoft.Json;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using GroupProject.Models;
 
 namespace GroupProject.Data
 {
-    //A static class to store and manage user data
     public static class UserDatabase
     {
-        private static readonly string FilePath = "users.json"; //file to store user data
-        public static List<User> Users { get; private set; } = new List<User>(); //In-memory list of users
+        private static string filePath = "users.csv";
+        private static List<User> users = new List<User>();
 
-        //static constructor that loads user data when the app starts
         static UserDatabase()
         {
             LoadUsers();
         }
 
-        //adds a new user to the list and saves to the file
+        private static void LoadUsers()
+        {
+            if (!File.Exists(filePath))
+            {
+                File.WriteAllText(filePath, "Name,Email,Password,Role" + Environment.NewLine);
+            }
+
+            var lines = File.ReadAllLines(filePath).Skip(1);
+            users = lines.Select(line =>
+            {
+                var parts = line.Split(',');
+                return new User(parts[0], parts[1], parts[2], parts[3]);
+            }).ToList();
+        }
+
         public static void AddUser(User user)
         {
-            Users.Add(user);
-            SaveUsers();
+            users.Add(user);
+            File.AppendAllText(filePath, $"{user.Name},{user.Email},{user.Password},{user.Role}{Environment.NewLine}");
         }
 
-        //Finds a user by email and password for login validation
-        public static User Authenticate(string email, string password) 
+        public static User Authenticate(string email, string password)
         {
-            return Users.FirstOrDefault(u => u.Email == email && u.Password == password);
+            return users.FirstOrDefault(u => u.Email == email && u.Password == password);
         }
 
-        //saves the current list of users to a JSON file
-        private static void SaveUsers() 
+        public static bool EmailExists(string email)
         {
-            var json = JsonConvert.SerializeObject(Users, Formatting.Indented);
-            File.WriteAllText(FilePath, json);
+            return users.Any(u => u.Email == email);
         }
 
-        //loads users from the JSON file into memory
-        private static void LoadUsers() 
-        {
-            if (File.Exists(FilePath)) 
-            {
-                var json = File.ReadAllText(FilePath);
-                Users = JsonConvert.DeserializeObject<List<User>>(json) ?? new List<User>();
-            }
-        }
-
+        public static List<User> GetAllUsers() => users;
     }
 }

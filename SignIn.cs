@@ -41,7 +41,7 @@ namespace GroupProject
                 return;
             }
 
-            User user = UserDatabase.Authenticate(email, password);
+            var user = UserDatabase.Authenticate(email, password);
 
             if (user == null)
             {
@@ -49,28 +49,21 @@ namespace GroupProject
                 return;
             }
 
-            // Successful login
             MessageBox.Show($"Welcome, {user.Name}! Role: {user.Role}");
-
             this.Hide();
 
-            if (user.Role == "Driver")
+            if (user.Role == "Manager")
             {
-                DriverHomePage driverPage = new DriverHomePage(user);
-                this.Hide();
-                driverPage.Show();
+                new ManagerHomePage(user).Show();
             }
-            else if (user.Role == "Manager")
+            else if (user.Role == "Driver")
             {
-                ManagerHomePage managerPage = new ManagerHomePage(user);
-                this.Hide();
-                managerPage.Show();
+                new DriverHomePage(user).Show();
             }
             else
             {
-                MessageBox.Show("Invalid Role");
+                MessageBox.Show("Unknown role assigned.");
             }
-
         }
     }
 }
