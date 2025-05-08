@@ -34,12 +34,14 @@
             this.Addbtn = new System.Windows.Forms.Button();
             this.VanIDtextbox = new System.Windows.Forms.TextBox();
             this.VanIDlabel = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vansDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.OrangeRed;
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 49);
@@ -49,11 +51,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Myanmar Text", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Myanmar Text", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(352, 52);
+            this.label1.Location = new System.Drawing.Point(358, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 51);
+            this.label1.Size = new System.Drawing.Size(98, 48);
             this.label1.TabIndex = 13;
             this.label1.Text = "Home";
             // 
@@ -85,7 +87,7 @@
             // VanIDlabel
             // 
             this.VanIDlabel.AutoSize = true;
-            this.VanIDlabel.Location = new System.Drawing.Point(574, 86);
+            this.VanIDlabel.Location = new System.Drawing.Point(574, 87);
             this.VanIDlabel.Name = "VanIDlabel";
             this.VanIDlabel.Size = new System.Drawing.Size(43, 13);
             this.VanIDlabel.TabIndex = 17;
@@ -101,11 +103,12 @@
             this.Controls.Add(this.VanIDtextbox);
             this.Controls.Add(this.Addbtn);
             this.Controls.Add(this.vansDGV);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Name = "ManagerHomePage";
             this.Text = "ManagerHomePage";
             this.Load += new System.EventHandler(this.ManagerHomePage_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vansDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
