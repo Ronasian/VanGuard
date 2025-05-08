@@ -58,6 +58,12 @@
     <Compile Include="DriverHomePage.Designer.cs">
       <DependentUpon>DriverHomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="formBeginInspect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formBeginInspect.Designer.cs">
+      <DependentUpon>formBeginInspect.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagerHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DriverHomePage.resx">
       <DependentUpon>DriverHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formBeginInspect.resx">
+      <DependentUpon>formBeginInspect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerHomePage.resx">
       <DependentUpon>ManagerHomePage.cs</DependentUpon>
