@@ -64,6 +64,12 @@
     <Compile Include="formBeginInspect.Designer.cs">
       <DependentUpon>formBeginInspect.cs</DependentUpon>
     </Compile>
+    <Compile Include="InpectionList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InpectionList.Designer.cs">
+      <DependentUpon>InpectionList.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagerHomePage.cs">
       <SubType>Form</SubType>
     </Compile>

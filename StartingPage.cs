@@ -71,13 +71,11 @@ namespace GroupProject
             SignIn signInForm = new SignIn();            
             signInForm.FormClosed += (s, args) => this.Close(); // return to this form after closing
             signInForm.Show();
-
-
         }
 
         private void StartingPage_Load(object sender, EventArgs e)
         {
-
+           
         }
         
         private void btnCreateAccount_Click(object sender, EventArgs e)
@@ -88,6 +86,15 @@ namespace GroupProject
             createAccountForm.Show();
 
         }
-               
+
+        private void AppDescription_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AppTitle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
