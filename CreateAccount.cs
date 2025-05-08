@@ -98,7 +98,11 @@ namespace GroupProject
 
         private void lblLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Close(); //return to StartingPage due to the FormClosed handler
+            this.Hide(); //return to StartingPage due to the FormClosed handler
+            StartingPage startingPage = new StartingPage();
+            startingPage.FormClosed += (s, args) => this.Close();
+            startingPage.Show();
+
         }
 
         private void txtPassword_TextChanged(object sender, EventArgs e)

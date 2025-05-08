@@ -26,6 +26,29 @@ namespace GroupProject
             //reduces flicker when drawing
             this.DoubleBuffered = true;
 
+            this.Resize += (s, e) => this.Invalidate();
+
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+
+            //create gradient brush from black to gray 
+            using (LinearGradientBrush brush = new LinearGradientBrush(
+                this.ClientRectangle,           //Area to paint
+                Color.Black,                    //Start color
+                Color.Gray,                     //End colo
+                LinearGradientMode.Horizontal)) //Direction: vertical
+            {
+                e.Graphics.FillRectangle(brush, this.ClientRectangle);
+            }
+        }
+
+        //redraw on resize
+        private void StartingPage_Resize(object sender, EventArgs e)
+        {
+            this.Invalidate(); // triggers repaint
         }
 
         //gradient bar drawing
@@ -41,17 +64,12 @@ namespace GroupProject
             }
         }
 
-        private void AppTitle_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             //open the SignIn form
-            SignIn signInForm = new SignIn();
             this.Hide();
-            signInForm.FormClosed += (s, args) => this.Show(); // return to this form after closing
+            SignIn signInForm = new SignIn();            
+            signInForm.FormClosed += (s, args) => this.Close(); // return to this form after closing
             signInForm.Show();
 
 
@@ -61,40 +79,15 @@ namespace GroupProject
         {
 
         }
-
-        private void panelLogin_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+        
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
-            CreateAccount createAccountForm = new CreateAccount();
             this.Hide();//hides the current form
-            createAccountForm.FormClosed += (s, args) => this.Show(); //Re-show when user closes the form
+            CreateAccount createAccountForm = new CreateAccount();            
+            createAccountForm.FormClosed += (s, args) => this.Close(); //Re-show when user closes the form
             createAccountForm.Show();
 
         }
-        private void panelCreateAccount_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
+               
     }
 }

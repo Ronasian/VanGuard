@@ -52,18 +52,26 @@ namespace GroupProject
             MessageBox.Show($"Welcome, {user.Name}! Role: {user.Role}");
             this.Hide();
 
+            Form homePageForm = null;
+
             if (user.Role == "Manager")
             {
-                new ManagerHomePage(user).Show();
+                homePageForm = new ManagerHomePage(user);
             }
             else if (user.Role == "Driver")
             {
-                new DriverHomePage(user).Show();
+               homePageForm = new DriverHomePage (user);
             }
             else
             {
                 MessageBox.Show("Unknown role assigned.");
+                this.Show();
+                return;
             }
+
+            //ensures app exits when the home page closes
+            homePageForm.FormClosed += (s, args) => this.Close();
+            homePageForm.Show();
         }
     }
 }
