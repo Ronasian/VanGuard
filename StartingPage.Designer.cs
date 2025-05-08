@@ -40,6 +40,7 @@
             this.AppTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.AppTitle.AutoSize = true;
+            this.AppTitle.BackColor = System.Drawing.Color.Transparent;
             this.AppTitle.Font = new System.Drawing.Font("Myanmar Text", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AppTitle.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.AppTitle.Location = new System.Drawing.Point(161, 94);
@@ -50,10 +51,10 @@
             // 
             // AppDescription
             // 
-            this.AppDescription.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.AppDescription.BackColor = System.Drawing.SystemColors.ControlDark;
             this.AppDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.AppDescription.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AppDescription.ForeColor = System.Drawing.SystemColors.Control;
+            this.AppDescription.ForeColor = System.Drawing.Color.White;
             this.AppDescription.Location = new System.Drawing.Point(170, 145);
             this.AppDescription.Margin = new System.Windows.Forms.Padding(4);
             this.AppDescription.Multiline = true;
@@ -97,7 +98,7 @@
             this.LPpanel.Location = new System.Drawing.Point(0, 0);
             this.LPpanel.Margin = new System.Windows.Forms.Padding(4);
             this.LPpanel.Name = "LPpanel";
-            this.LPpanel.Size = new System.Drawing.Size(977, 53);
+            this.LPpanel.Size = new System.Drawing.Size(805, 53);
             this.LPpanel.TabIndex = 4;
             this.LPpanel.Paint += new System.Windows.Forms.PaintEventHandler(this.LPpanel_Paint);
             // 
@@ -106,7 +107,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(972, 673);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.LPpanel);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnCreateAccount);
