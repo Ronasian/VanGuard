@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.AppTitle = new System.Windows.Forms.Label();
-            this.AppDescription = new System.Windows.Forms.TextBox();
             this.btnCreateAccount = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.LPpanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // AppTitle
@@ -40,6 +40,7 @@
             this.AppTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.AppTitle.AutoSize = true;
+            this.AppTitle.BackColor = System.Drawing.Color.Transparent;
             this.AppTitle.Font = new System.Drawing.Font("Myanmar Text", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AppTitle.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.AppTitle.Location = new System.Drawing.Point(161, 94);
@@ -47,22 +48,7 @@
             this.AppTitle.Size = new System.Drawing.Size(160, 51);
             this.AppTitle.TabIndex = 0;
             this.AppTitle.Text = "VanGuard";
-            // 
-            // AppDescription
-            // 
-            this.AppDescription.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.AppDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.AppDescription.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AppDescription.ForeColor = System.Drawing.SystemColors.Control;
-            this.AppDescription.Location = new System.Drawing.Point(170, 145);
-            this.AppDescription.Margin = new System.Windows.Forms.Padding(4);
-            this.AppDescription.Multiline = true;
-            this.AppDescription.Name = "AppDescription";
-            this.AppDescription.ReadOnly = true;
-            this.AppDescription.Size = new System.Drawing.Size(233, 97);
-            this.AppDescription.TabIndex = 1;
-            this.AppDescription.Text = "Where managing your delivery fleet is made easy with reporting tools, data manage" +
-    "ment, and live status update \r\nfeatures.";
+            this.AppTitle.Click += new System.EventHandler(this.AppTitle_Click);
             // 
             // btnCreateAccount
             // 
@@ -97,20 +83,32 @@
             this.LPpanel.Location = new System.Drawing.Point(0, 0);
             this.LPpanel.Margin = new System.Windows.Forms.Padding(4);
             this.LPpanel.Name = "LPpanel";
-            this.LPpanel.Size = new System.Drawing.Size(977, 53);
+            this.LPpanel.Size = new System.Drawing.Size(856, 53);
             this.LPpanel.TabIndex = 4;
             this.LPpanel.Paint += new System.Windows.Forms.PaintEventHandler(this.LPpanel_Paint);
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(166, 145);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(233, 97);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Where managing your delivery fleet is made easy with reporting tools, data manage" +
+    "ment, and live status update \r\nfeatures.\r\n";
             // 
             // StartingPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(972, 673);
+            this.ClientSize = new System.Drawing.Size(851, 426);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.LPpanel);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnCreateAccount);
-            this.Controls.Add(this.AppDescription);
             this.Controls.Add(this.AppTitle);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "StartingPage";
@@ -124,10 +122,10 @@
         #endregion
 
         private System.Windows.Forms.Label AppTitle;
-        private System.Windows.Forms.TextBox AppDescription;
         private System.Windows.Forms.Button btnCreateAccount;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Panel LPpanel;
+        private System.Windows.Forms.Label label1;
     }
 }
 

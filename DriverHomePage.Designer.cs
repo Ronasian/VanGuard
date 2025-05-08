@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnInpect = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAssignVan = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -44,17 +44,17 @@
             this.panel1.Size = new System.Drawing.Size(800, 49);
             this.panel1.TabIndex = 0;
             // 
-            // button3
+            // btnInpect
             // 
-            this.button3.BackColor = System.Drawing.Color.OrangeRed;
-            this.button3.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(278, 259);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(104, 86);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "BEGIN INSPECTION";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnInpect.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnInpect.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInpect.Location = new System.Drawing.Point(278, 259);
+            this.btnInpect.Name = "btnInpect";
+            this.btnInpect.Size = new System.Drawing.Size(104, 86);
+            this.btnInpect.TabIndex = 3;
+            this.btnInpect.Text = "BEGIN INSPECTION";
+            this.btnInpect.UseVisualStyleBackColor = false;
+            this.btnInpect.Click += new System.EventHandler(this.btnInspect_Click);
             // 
             // button4
             // 
@@ -78,18 +78,18 @@
             this.button2.Text = "REASSIGN VEHICLE";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnAssignVan
             // 
-            this.button1.BackColor = System.Drawing.Color.OrangeRed;
-            this.button1.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(278, 130);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 86);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "ASSIGN VEHICLE";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAssignVan.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnAssignVan.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAssignVan.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAssignVan.Location = new System.Drawing.Point(278, 130);
+            this.btnAssignVan.Name = "btnAssignVan";
+            this.btnAssignVan.Size = new System.Drawing.Size(104, 86);
+            this.btnAssignVan.TabIndex = 7;
+            this.btnAssignVan.Text = "ASSIGN VEHICLE";
+            this.btnAssignVan.UseVisualStyleBackColor = false;
+            this.btnAssignVan.Click += new System.EventHandler(this.btnAssignVan_Click);
             // 
             // label1
             // 
@@ -110,10 +110,10 @@
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAssignVan);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnInpect);
             this.Controls.Add(this.panel1);
             this.Name = "DriverHomePage";
             this.Text = "VanGuard";
@@ -126,10 +126,10 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnInpect;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAssignVan;
         private System.Windows.Forms.Label label1;
     }
 }
