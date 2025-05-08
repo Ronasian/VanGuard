@@ -66,13 +66,40 @@ namespace GroupProject
                 Name = "RemoveVan"
             });
             // creates rows for each van in database
-            foreach (var van in VanDatabase.Vans)
+            foreach (var van in VanDatabase.Vans.ToList())
             {
+                // use helper function on van
+                ApplyInspectionLogic(van);
                 string needsRepairText = van.NeedsRepair ? "Yes" : "No";
                 vansDGV.Rows.Add(van.Id, van.AssignedDriver, van.Status, needsRepairText);
             }
             // prevents users from adding rows (excluding the actual add van button)
             vansDGV.AllowUserToAddRows = false;
+        }
+        private void ApplyInspectionLogic(Van van)
+        {
+            if (string.IsNullOrWhiteSpace(van.Report))
+                return;
+
+            string report = van.Report.ToLower();
+
+            if (report.Contains("engine") || report.Contains("light"))
+            {
+                van.Status = "Out of Service";
+                van.NeedsRepair = true;
+            }
+            else if (report.Contains("exterior"))
+            {
+                van.Status = "Active";
+                van.NeedsRepair = true;
+            }
+            else
+            {
+                van.Status = "Active";
+                van.NeedsRepair = false;
+            }
+
+            VanDatabase.UpdateVan(van);
         }
 
         private void Addbtn_Click(object sender, EventArgs e)
