@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Drawing.Drawing2D;
@@ -27,6 +21,7 @@ namespace GroupProject
             //reduces flicker when drawing
             this.DoubleBuffered = true;
 
+            // checks for existing userdatabase
             if (!File.Exists(filePath))
             {
                 File.WriteAllText(filePath, "Name,Email,Password,Position" + Environment.NewLine);
@@ -67,32 +62,38 @@ namespace GroupProject
         {
 
         }
-
+        // event handling for create account button
         private void btnSubmitCreate_Click(object sender, EventArgs e)
         {
+            // save inputs in variables
             string name = txtName.Text.Trim();
             string email = txtEmail.Text.Trim();
             string password = txtPassword.Text;
             string role = cmbPosition.SelectedItem?.ToString();
-
+            // if user does not fill in every field
             if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(email) ||
                 string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(role))
             {
+                // prompt user for all entries
                 MessageBox.Show("Please fill in all fields.");
                 return;
             }
-
+            // if email exists in the system
             if (UserDatabase.EmailExists(email))
             {
+                // notify user
                 MessageBox.Show("An account with this email already exists.");
                 return;
             }
-
+            // create a new user using User class
             var newUser = new User(name, email, password, role);
+            // add user to database
             UserDatabase.AddUser(newUser);
+            // message
             MessageBox.Show("Account created successfully!");
-
+            // hide form
             this.Hide();
+            // open sign in form
             new SignIn().Show();
         }
 

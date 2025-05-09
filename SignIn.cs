@@ -1,15 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 using GroupProject.Data;
-using GroupProject.Models;
 
 namespace GroupProject
 {
@@ -19,12 +10,12 @@ namespace GroupProject
         {
             InitializeComponent();
         }
-
+        // ignore
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
-
+        //ignore
         private void SignIn_Load(object sender, EventArgs e)
         {
 
@@ -32,6 +23,7 @@ namespace GroupProject
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
+            // save user input under variables
             string email = txtLoginEmail.Text.Trim();
             string password = txtLoginPassword.Text;
 
